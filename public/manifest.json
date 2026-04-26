@@ -4,21 +4,28 @@
   "description": "Platform digital koperasi nelayan Bawean. Kelola tangkapan, penjualan, cold storage, dan keuangan dalam satu aplikasi.",
   "start_url": "/",
   "display": "standalone",
-  "orientation": "portrait",
   "background_color": "#0D1B2A",
   "theme_color": "#0D1B2A",
+  "orientation": "portrait",
+  "scope": "/",
   "icons": [
     {
-      "src": "/image/logo_bluecora.png",
+      "src": "/image/logo_aplikasi.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
     },
     {
-      "src": "/image/logo_bluecora.png",
+      "src": "/image/logo_aplikasi.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
+    },
+    {
+      "src": "/image/logo_aplikasi.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ],
   "categories": ["business", "finance", "productivity"],

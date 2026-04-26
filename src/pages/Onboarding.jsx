@@ -7,7 +7,7 @@ export default function Onboarding() {
     <div className="onboarding-page animate-fade-in">
       <div className="onboarding-logo-box animate-fade-in-up">
         <img 
-          src="/image/logo_bluecora.png" 
+          src="/image/logo_aplikasi.png" 
           alt="Bluecora" 
           width="60"
           height="60"

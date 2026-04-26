@@ -26,7 +26,7 @@ export default function Splash() {
       <div className="splash-content">
         <div className="splash-logo-wrapper">
           <img 
-            src="/image/logo_bluecora.png" 
+            src="/image/logo_aplikasi.png" 
             alt="Bluecora" 
             className="splash-logo"
             width="90"
