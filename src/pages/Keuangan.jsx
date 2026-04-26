@@ -1,15 +1,19 @@
+import { useState } from 'react';
 import TopBar from '../components/TopBar';
 import { formatCurrency } from '../utils/helpers';
 import { useApp } from '../context/AppContext';
 
 export default function Keuangan() {
   const { user } = useApp();
+  const [expandedHutang, setExpandedHutang] = useState(null);
   
   const pengeluaranTotal = user.pengeluaran.solar + user.pengeluaran.perbaikanKapal + user.pengeluaran.bekalMelaut;
   const laba = user.pendapatanBulanIni - pengeluaranTotal;
   const targetPercent = (user.targetTabungan.terkumpul / user.targetTabungan.target) * 100;
   const months = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun'];
   const maxIncome = Math.max(...user.pendapatanBulanLalu);
+  const minIncome = Math.min(...user.pendapatanBulanLalu);
+  const range = maxIncome - minIncome;
 
   return (
     <>
@@ -43,18 +47,29 @@ export default function Keuangan() {
 
         {/* Interactive Chart */}
         <div className="section-header"><h2 className="section-title">Tren Pendapatan</h2></div>
-        <div className="keuangan-chart-wrapper animate-fade-in">
+        <div className="keuangan-chart-wrapper animate-fade-in-up">
           <div className="keuangan-chart-bars">
-            {user.pendapatanBulanLalu.map((val, i) => (
-              <div key={i} className="keuangan-chart-bar-container">
-                <div 
-                  className={`keuangan-chart-bar ${i === user.pendapatanBulanLalu.length - 1 ? 'active' : ''}`} 
-                  style={{ height: `${(val / maxIncome) * 100}%` }}
-                  data-value={formatCurrency(val)}
-                />
-                <span className="keuangan-chart-label">{months[i]}</span>
-              </div>
-            ))}
+            {user.pendapatanBulanLalu && user.pendapatanBulanLalu.length > 0 ? (
+              user.pendapatanBulanLalu.map((val, i) => {
+                // Scale so min is 20% and max is 100%
+                const heightPercent = range > 0 
+                  ? 20 + ((val - minIncome) / range) * 80 
+                  : 100;
+                
+                return (
+                  <div key={i} className="keuangan-chart-bar-container">
+                    <div 
+                      className={`keuangan-chart-bar ${i === user.pendapatanBulanLalu.length - 1 ? 'active' : ''}`} 
+                      style={{ height: `${heightPercent}%` }}
+                      data-value={formatCurrency(val)}
+                    />
+                    <span className="keuangan-chart-label">{months[i] || ''}</span>
+                  </div>
+                );
+              })
+            ) : (
+              <div className="w-full text-center py-10 text-muted">Data tidak tersedia</div>
+            )}
           </div>
         </div>
 
@@ -113,17 +128,58 @@ export default function Keuangan() {
           </div>
         </div>
 
-        {/* Debts */}
+        {/* Debts - Dropdown */}
         <div className="section-header" style={{ marginTop: 'var(--space-md)' }}><h2 className="section-title">Catatan Hutang</h2></div>
         <div className="flex flex-col gap-sm">
           {user.hutang.map((h, i) => (
-            <div key={i} className="list-item animate-fade-in-up" style={{ alignItems: 'center' }}>
-              <div className="list-item-icon material-symbols-outlined text-red-400">receipt_long</div>
-              <div className="list-item-content" style={{ flex: '1.5' }}>
-                <div className="list-item-title truncate" style={{ whiteSpace: 'nowrap' }}>{h.keterangan}</div>
-                <div className="list-item-subtitle text-danger font-bold">Tempo: {h.jatuhTempo}</div>
+            <div key={i} className="animate-fade-in-up">
+              <div 
+                className="list-item"
+                onClick={() => setExpandedHutang(expandedHutang === i ? null : i)}
+                style={{ alignItems: 'center', cursor: 'pointer', transition: 'background 0.2s' }}
+              >
+                <div className="list-item-icon material-symbols-outlined text-red-400">receipt_long</div>
+                <div className="list-item-content">
+                  <div className="list-item-title truncate" style={{ whiteSpace: 'nowrap' }}>{h.keterangan}</div>
+                  <div className="list-item-subtitle">{formatCurrency(h.jumlah)}</div>
+                </div>
+                <span 
+                  className="material-symbols-outlined" 
+                  style={{ 
+                    fontSize: '20px', 
+                    color: 'var(--color-text-muted)', 
+                    transition: 'transform 0.3s ease',
+                    transform: expandedHutang === i ? 'rotate(180deg)' : 'rotate(0deg)'
+                  }}
+                >expand_more</span>
               </div>
-              <div className="list-item-value text-danger font-black">{formatCurrency(h.jumlah)}</div>
+              <div style={{
+                maxHeight: expandedHutang === i ? '120px' : '0',
+                opacity: expandedHutang === i ? 1 : 0,
+                overflow: 'hidden',
+                transition: 'max-height 0.3s ease, opacity 0.3s ease',
+              }}>
+                <div style={{
+                  background: 'var(--color-bg-secondary)',
+                  borderRadius: 'var(--radius-md)',
+                  padding: 'var(--space-sm) var(--space-md)',
+                  marginTop: '6px',
+                  border: '1px solid var(--color-border-light)'
+                }}>
+                  <div className="flex justify-between items-center" style={{ marginBottom: '6px' }}>
+                    <span className="text-xs text-muted">Jumlah</span>
+                    <span className="text-sm text-danger font-bold">{formatCurrency(h.jumlah)}</span>
+                  </div>
+                  <div className="flex justify-between items-center" style={{ marginBottom: '6px' }}>
+                    <span className="text-xs text-muted">Jatuh Tempo</span>
+                    <span className="text-xs font-bold" style={{ color: 'var(--color-danger)' }}>{h.jatuhTempo}</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-xs text-muted">Status</span>
+                    <span className="badge badge-danger" style={{ fontSize: '10px' }}>Belum Lunas</span>
+                  </div>
+                </div>
+              </div>
             </div>
           ))}
         </div>

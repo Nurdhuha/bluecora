@@ -218,13 +218,17 @@
   width: 100%; box-sizing: border-box;
 }
 .keuangan-chart-bars {
-  display: flex; align-items: flex-end; justify-content: space-between; height: 120px; gap: 8px; padding-top: 15px;
+  display: flex; align-items: flex-end; justify-content: space-between; height: 150px; gap: 8px; padding-top: 25px;
 }
-.keuangan-chart-bar-container { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px; cursor: pointer; min-width: 0; }
+.keuangan-chart-bar-container { 
+  flex: 1; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; gap: 8px; cursor: pointer; min-width: 0; 
+}
 .keuangan-chart-bar {
   width: 100%; max-width: 24px; background: var(--color-bg-secondary); border-radius: 4px 4px 0 0;
-  position: relative; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  transform-origin: bottom; animation: growUp 1s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative; transition: all 0.3s ease;
+  transform-origin: bottom; 
+  animation: growUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  min-height: 4px; /* Ensure small values are still visible */
 }
 .keuangan-chart-bar.active { background: var(--color-primary); }
 .keuangan-chart-bar::after {
@@ -234,6 +238,11 @@
 }
 .keuangan-chart-bar-container:active .keuangan-chart-bar::after { transform: translateX(-50%) scale(1); }
 .keuangan-chart-label { font-size: 10px; color: var(--color-text-muted); font-weight: 600; }
+
+@keyframes growUp {
+  0% { transform: scaleY(0); opacity: 0; }
+  100% { transform: scaleY(1); opacity: 1; }
+}
 
 .keuangan-target { 
   background: var(--color-surface); border-radius: var(--radius-lg); padding: var(--space-md); 
