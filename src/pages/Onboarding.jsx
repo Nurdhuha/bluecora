@@ -9,7 +9,10 @@ export default function Onboarding() {
         <img 
           src="/image/logo_bluecora.png" 
           alt="Bluecora" 
-          style={{ width: '60px', height: '60px', borderRadius: '16px', marginBottom: '8px' }} 
+          width="60"
+          height="60"
+          decoding="async"
+          style={{ borderRadius: '16px', marginBottom: '8px' }}
         />
         <span className="onboarding-logo-text">BLUECORA</span>
       </div>

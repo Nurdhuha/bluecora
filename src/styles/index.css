@@ -107,6 +107,12 @@
 .material-symbols-outlined {
   font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
   vertical-align: middle;
+  display: inline-block;
+  font-display: block;
+}
+
+.animate-fade-in, .animate-fade-in-up, .splash-logo-pulse {
+  will-change: transform, opacity;
 }
 
 /* ---------- CSS Reset ---------- */

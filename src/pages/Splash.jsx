@@ -29,6 +29,9 @@ export default function Splash() {
             src="/image/logo_bluecora.png" 
             alt="Bluecora" 
             className="splash-logo"
+            width="90"
+            height="90"
+            decoding="async"
           />
           <div className="splash-logo-pulse" />
         </div>
