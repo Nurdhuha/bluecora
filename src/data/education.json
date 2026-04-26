@@ -1,0 +1,8 @@
+[
+  { "id": 1, "judul": "Cara Menjaga Mutu Ikan", "ikon": "set_meal", "kategori": "Kualitas", "warna": "#0A6EBD" },
+  { "id": 2, "judul": "Sortir Grade Ikan A/B/C", "ikon": "star", "kategori": "Kualitas", "warna": "#12B886" },
+  { "id": 3, "judul": "Tips Harga Jual Tinggi", "ikon": "payments", "kategori": "Bisnis", "warna": "#FF6B35" },
+  { "id": 4, "judul": "Kelola Keuangan Nelayan", "ikon": "account_balance_wallet", "kategori": "Keuangan", "warna": "#0A6EBD" },
+  { "id": 5, "judul": "Panduan Cold Storage", "ikon": "ac_unit", "kategori": "Teknis", "warna": "#1A8FE3" },
+  { "id": 6, "judul": "Cuaca & Keselamatan Laut", "ikon": "tsunami", "kategori": "Keselamatan", "warna": "#FF4757" }
+]

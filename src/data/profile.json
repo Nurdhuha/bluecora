@@ -1,0 +1,24 @@
+{
+  "nama": "Pak Ariel",
+  "idAnggota": "BWN-2024-0147",
+  "kapal": "KM Berkah Samudra",
+  "noHp": "0812-3456-7890",
+  "rekening": "BRI **** 4521",
+  "bergabungSejak": "2024-03-15",
+  "totalTransaksi": 47,
+  "pendapatanBulanIni": 4955000,
+  "pendapatanBulanLalu": [2800000, 3200000, 4100000, 3600000, 5200000, 4955000],
+  "pengeluaran": {
+    "solar": 1200000,
+    "perbaikanKapal": 500000,
+    "bekalMelaut": 350000
+  },
+  "targetTabungan": {
+    "nama": "Beli Kapal Baru",
+    "target": 50000000,
+    "terkumpul": 18750000
+  },
+  "hutang": [
+    { "keterangan": "Pinjaman Modal Melaut", "jumlah": 2000000, "jatuhTempo": "2026-05-01" }
+  ]
+}

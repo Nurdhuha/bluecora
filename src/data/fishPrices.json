@@ -1,0 +1,10 @@
+[
+  { "jenis": "Kakap Merah", "harga": 85000, "satuan": "kg", "trend": "up", "perubahan": 5 },
+  { "jenis": "Kerapu", "harga": 120000, "satuan": "kg", "trend": "up", "perubahan": 8 },
+  { "jenis": "Tongkol", "harga": 35000, "satuan": "kg", "trend": "down", "perubahan": -3 },
+  { "jenis": "Tenggiri", "harga": 95000, "satuan": "kg", "trend": "up", "perubahan": 2 },
+  { "jenis": "Teri", "harga": 45000, "satuan": "kg", "trend": "down", "perubahan": -1 },
+  { "jenis": "Cumi-cumi", "harga": 75000, "satuan": "kg", "trend": "up", "perubahan": 10 },
+  { "jenis": "Bawal", "harga": 65000, "satuan": "kg", "trend": "up", "perubahan": 4 },
+  { "jenis": "Udang", "harga": 130000, "satuan": "kg", "trend": "up", "perubahan": 12 }
+]

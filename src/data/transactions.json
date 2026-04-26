@@ -1,0 +1,7 @@
+[
+  { "id": 1, "tanggal": "2026-04-25", "jenis": "Kakap Merah", "berat": 12, "grade": "A", "harga": 85000, "total": 1020000, "metode": "Langsung Cair" },
+  { "id": 2, "tanggal": "2026-04-23", "jenis": "Kerapu", "berat": 8, "grade": "A", "harga": 120000, "total": 960000, "metode": "Tabungan Koperasi" },
+  { "id": 3, "tanggal": "2026-04-21", "jenis": "Tongkol", "berat": 30, "grade": "B", "harga": 30000, "total": 900000, "metode": "Potong Cicilan" },
+  { "id": 4, "tanggal": "2026-04-18", "jenis": "Tenggiri", "berat": 15, "grade": "A", "harga": 95000, "total": 1425000, "metode": "Langsung Cair" },
+  { "id": 5, "tanggal": "2026-04-15", "jenis": "Cumi-cumi", "berat": 10, "grade": "B", "harga": 65000, "total": 650000, "metode": "Tabungan Koperasi" }
+]

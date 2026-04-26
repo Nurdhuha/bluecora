@@ -1,0 +1,13 @@
+{
+  "stokSiapKirim": 850,
+  "jadwal": [
+    { "id": 1, "kapal": "KM Bawean Jaya", "tujuan": "Surabaya", "tanggal": "2026-04-28", "status": "Dijadwalkan" },
+    { "id": 2, "kapal": "KM Sejahtera", "tujuan": "Gresik", "tanggal": "2026-04-26", "status": "Berlayar" },
+    { "id": 3, "kapal": "KM Bahari", "tujuan": "Lamongan", "tanggal": "2026-04-25", "status": "Sampai" }
+  ],
+  "pembeliTetap": [
+    { "nama": "PT Ikan Segar Nusantara", "kota": "Surabaya", "orderBulanIni": "320 kg" },
+    { "nama": "UD Samudra Jaya", "kota": "Gresik", "orderBulanIni": "180 kg" },
+    { "nama": "CV Bahari Makmur", "kota": "Lamongan", "orderBulanIni": "150 kg" }
+  ]
+}

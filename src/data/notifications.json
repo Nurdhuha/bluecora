@@ -1,0 +1,5 @@
+[
+  { "id": 1, "icon": "warning", "text": "Cuaca besok: gelombang 1.5m, harap waspada", "type": "warning" },
+  { "id": 2, "icon": "payments", "text": "Harga Kerapu naik 8% hari ini!", "type": "success" },
+  { "id": 3, "icon": "assignment", "text": "Cicilan jatuh tempo 1 Mei 2026", "type": "info" }
+]

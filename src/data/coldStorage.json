@@ -1,0 +1,12 @@
+{
+  "suhuRuang": -18,
+  "slotTerisi": 12,
+  "slotTotal": 20,
+  "items": [
+    { "id": 1, "jenis": "Kakap Merah", "berat": 25, "tanggalMasuk": "2026-04-23", "grade": "A", "status": "Baik" },
+    { "id": 2, "jenis": "Kerapu", "berat": 15, "tanggalMasuk": "2026-04-22", "grade": "A", "status": "Baik" },
+    { "id": 3, "jenis": "Tongkol", "berat": 40, "tanggalMasuk": "2026-04-20", "grade": "B", "status": "Baik" },
+    { "id": 4, "jenis": "Tenggiri", "berat": 18, "tanggalMasuk": "2026-04-24", "grade": "A", "status": "Baik" },
+    { "id": 5, "jenis": "Cumi-cumi", "berat": 10, "tanggalMasuk": "2026-04-19", "grade": "B", "status": "Perlu Dicek" }
+  ]
+}

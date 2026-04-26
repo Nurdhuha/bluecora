@@ -1,0 +1,274 @@
+/* ========================================
+   BLUECORA — Page-Specific Styles (Ocean Blue & Anti-Cropping)
+   ======================================== */
+
+/* ---------- Onboarding Page (Luxurious Minimalist Redesign) ---------- */
+.onboarding-page {
+  display: flex; flex-direction: column; min-height: 100dvh; 
+  background: url('/image/onboard_image.png') center/cover no-repeat;
+  position: relative; overflow-y: auto; overflow-x: hidden;
+}
+.onboarding-page::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(8, 47, 73, 0) 0%, rgba(8, 47, 73, 0.4) 40%, rgba(8, 47, 73, 1) 100%);
+  z-index: 1;
+}
+.onboarding-logo-box {
+  padding-top: 15vh; /* Shifted slightly up from 20vh */
+  display: flex; flex-direction: column; align-items: center; gap: 4px; z-index: 10;
+  margin-bottom: var(--space-xl);
+}
+.onboarding-logo-text { font-size: 13px; font-weight: 400; color: white; letter-spacing: 10px; text-indent: 10px; opacity: 0.7; }
+
+.onboarding-content {
+  margin-top: auto;
+  position: relative; z-index: 10;
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+  padding: var(--space-xl) var(--space-lg); padding-bottom: 8vh; /* Shifted down from 15vh */
+  width: 100%;
+}
+.onboarding-title { 
+  font-size: 26px; font-weight: 700; color: white; 
+  margin-bottom: var(--space-sm); line-height: 1.2; letter-spacing: -0.5px;
+}
+.onboarding-desc { 
+  font-size: 11.5px; color: rgba(255,255,255,0.6); line-height: 1.5; 
+  margin-bottom: var(--space-xl); max-width: 240px; font-weight: 400; 
+}
+.onboarding-btn { 
+  width: 100%; max-width: 180px; border-radius: var(--radius-lg); 
+  font-size: 13px; padding: 12px; 
+  background: white; color: var(--color-primary-dark); 
+  font-weight: 700; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+.onboarding-btn:active { transform: scale(0.96); opacity: 0.9; }
+
+/* ---------- Login Page ---------- */
+.login-page { 
+  display: flex; flex-direction: column; min-height: 100dvh; 
+  padding: var(--space-xl) var(--space-lg); 
+  justify-content: center; background: var(--color-bg); 
+  max-width: 380px; margin: 0 auto;
+}
+.login-header { text-align: center; margin-bottom: var(--space-lg); display: flex; flex-direction: column; align-items: center; }
+.login-logo-img { width: 60px; height: auto; margin-bottom: var(--space-md); filter: drop-shadow(0 4px 8px rgba(3, 105, 161, 0.06)); }
+.login-title { font-size: 20px; font-weight: 700; letter-spacing: -0.5px; color: var(--color-text); margin-bottom: 2px; }
+.login-subtitle { font-size: 12px; color: var(--color-text-secondary); font-weight: 400; }
+.login-form { display: flex; flex-direction: column; gap: var(--space-md); width: 100%; }
+
+/* ---------- Home Page ---------- */
+.home-greeting { margin-bottom: var(--space-xl); width: 100%; }
+.home-greeting-sub { font-size: 11px; color: var(--color-text-secondary); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+.home-greeting-text { font-size: var(--font-size-2xl); font-weight: var(--font-weight-semibold); letter-spacing: -1px; color: var(--color-text); line-height: 1.1; word-wrap: break-word; }
+
+/* ---------- Cold Storage Page ---------- */
+.cold-gauge {
+  display: flex; align-items: center; justify-content: center; gap: var(--space-lg); padding: var(--space-lg);
+  background: var(--color-surface); border-radius: var(--radius-lg); margin-bottom: var(--space-lg);
+  border: 1px solid var(--color-border); width: 100%; box-sizing: border-box; flex-wrap: wrap;
+}
+.cold-gauge-circle {
+  width: 100px; height: 100px; border-radius: var(--radius-full); border: 4px solid var(--color-bg-secondary);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; flex-shrink: 0;
+}
+.cold-gauge-circle::before {
+  content: ''; position: absolute; inset: -4px; border-radius: var(--radius-full);
+  border: 4px solid transparent; border-top-color: var(--color-primary); border-right-color: var(--color-primary);
+  animation: spin 6s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.cold-gauge-value { font-size: var(--font-size-2xl); font-weight: var(--font-weight-semibold); color: var(--color-text); line-height: 1; margin-bottom: 2px; }
+.cold-gauge-unit { font-size: 10px; color: var(--color-text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+.cold-stats { display: flex; flex-direction: column; gap: var(--space-sm); min-width: 0; }
+.cold-stat-item { display: flex; align-items: center; gap: var(--space-sm); font-size: 14px; font-weight: 500; color: var(--color-text-secondary); white-space: nowrap; }
+.cold-stat-dot { width: 8px; height: 8px; border-radius: var(--radius-full); flex-shrink: 0; }
+.cold-action-bar { display: flex; gap: var(--space-sm); margin-bottom: var(--space-lg); width: 100%; }
+
+/* ---------- Jual Ikan Page (Premium Redesign) ---------- */
+.jual-segmented-control {
+  display: flex; background: var(--color-bg-secondary); border-radius: var(--radius-lg);
+  padding: 4px; margin-bottom: var(--space-xl); position: relative; width: 100%; border: 1px solid var(--color-border);
+}
+.jual-segment-btn {
+  flex: 1; text-align: center; padding: 12px; font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium); color: var(--color-text-secondary);
+  border-radius: var(--radius-md); transition: all var(--transition-fast); position: relative; z-index: 2;
+}
+.jual-segment-btn.active { color: var(--color-primary-dark); font-weight: var(--font-weight-bold); }
+.jual-segment-slider {
+  position: absolute; top: 4px; bottom: 4px; width: calc(50% - 4px);
+  background: var(--color-surface); border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm); transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1); z-index: 1;
+}
+
+.jual-progress-container { display: flex; flex-direction: column; align-items: center; gap: 8px; margin-bottom: var(--space-xl); width: 100%; }
+.jual-progress-text { font-size: 12px; font-weight: var(--font-weight-semibold); color: var(--color-text-secondary); text-transform: uppercase; letter-spacing: 1px; }
+.jual-progress-hairline { width: 100%; height: 2px; background: var(--color-bg-secondary); border-radius: 2px; overflow: hidden; }
+.jual-progress-hairline-fill { height: 100%; background: var(--color-primary); transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+
+.jual-option-premium {
+  display: flex; align-items: center; justify-content: space-between; padding: var(--space-md);
+  border-radius: var(--radius-lg); background: var(--color-surface); border: 1px solid var(--color-border);
+  cursor: pointer; transition: all var(--transition-fast); width: 100%; box-sizing: border-box; margin-bottom: var(--space-sm);
+}
+.jual-option-premium.selected {
+  border-color: var(--color-primary); background: rgba(2, 132, 199, 0.04);
+}
+.jual-option-premium-content { flex: 1; }
+.jual-option-premium-icon {
+  width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  color: transparent; transition: all 0.2s;
+}
+.jual-option-premium.selected .jual-option-premium-icon {
+  color: var(--color-primary);
+}
+
+.jual-typographic-input {
+  display: flex; align-items: center; justify-content: center; width: 100%;
+  border-bottom: 2px solid var(--color-border); padding-bottom: var(--space-sm);
+  transition: border-color var(--transition-fast);
+}
+.jual-typographic-input:focus-within { border-color: var(--color-primary); }
+.jual-input-bare {
+  font-size: var(--font-size-2xl); /* Normal size, not overly huge */
+  font-weight: var(--font-weight-semibold); color: var(--color-text);
+  text-align: center; width: 100px; background: transparent; outline: none; border: none;
+}
+.jual-input-unit { font-size: var(--font-size-lg); color: var(--color-text-muted); font-weight: var(--font-weight-medium); margin-left: 8px; }
+
+.jual-receipt-card {
+  background: var(--color-surface); border-radius: var(--radius-lg); padding: var(--space-xl) var(--space-lg);
+  margin-bottom: var(--space-xl); border: 1px solid var(--color-border); width: 100%; box-sizing: border-box;
+  box-shadow: var(--shadow-sm); position: relative;
+}
+.jual-receipt-card::before, .jual-receipt-card::after {
+  content: ''; position: absolute; top: 50%; width: 20px; height: 20px;
+  background: var(--color-bg); border-radius: 50%; border: 1px solid var(--color-border);
+  transform: translateY(-50%);
+}
+.jual-receipt-card::before { left: -11px; border-right-color: transparent; border-top-color: transparent; transform: translateY(-50%) rotate(45deg); }
+.jual-receipt-card::after { right: -11px; border-left-color: transparent; border-bottom-color: transparent; transform: translateY(-50%) rotate(45deg); }
+.jual-receipt-divider { border-top: 1px dashed var(--color-border); margin: var(--space-md) 0; }
+.jual-receipt-row { display: flex; justify-content: space-between; font-size: 14px; margin-bottom: 8px; color: var(--color-text-secondary); }
+.jual-receipt-total { font-size: var(--font-size-2xl); font-weight: var(--font-weight-bold); color: var(--color-text); letter-spacing: -0.5px; text-align: right; margin-top: 4px; }
+
+/* ---------- Koperasi Page ---------- */
+.koperasi-member-card { 
+  background: var(--color-surface); border: 1px solid var(--color-border); 
+  border-radius: var(--radius-lg); padding: var(--space-md); 
+  margin-bottom: var(--space-md); display: flex; align-items: center; gap: var(--space-md); width: 100%; box-sizing: border-box; 
+  box-shadow: var(--shadow-sm);
+}
+.koperasi-member-avatar { width: 44px; height: 44px; border-radius: var(--radius-full); background: var(--color-bg-secondary); display: flex; align-items: center; justify-content: center; font-size: 20px; color: var(--color-primary); flex-shrink: 0; }
+.koperasi-member-name { font-size: 15px; font-weight: 700; color: var(--color-text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.koperasi-savings-list {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  margin-bottom: var(--space-md);
+  width: 100%; box-sizing: border-box;
+  box-shadow: var(--shadow-sm);
+}
+.koperasi-savings-item {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--color-border-light);
+}
+.koperasi-savings-item:last-child { border-bottom: none; }
+.koperasi-savings-label { color: var(--color-text-secondary); font-size: 11px; font-weight: 500; }
+.koperasi-savings-value { font-weight: 700; color: var(--color-text); font-size: 11px; }
+
+.koperasi-vote-card { background: var(--color-surface); border-radius: var(--radius-lg); padding: var(--space-md); border: 1px solid var(--color-border); width: 100%; box-sizing: border-box; box-shadow: var(--shadow-sm); }
+.koperasi-vote-bar { display: flex; gap: 2px; margin: 12px 0; height: 4px; border-radius: var(--radius-full); overflow: hidden; background: var(--color-bg-secondary); width: 100%; }
+.koperasi-vote-yes { background: var(--color-primary); transition: width 0.8s ease; }
+.koperasi-vote-no { background: var(--color-text-muted); transition: width 0.8s ease; }
+
+/* ---------- Keuangan Page (Premium Redesign) ---------- */
+.keuangan-card-premium {
+  padding: var(--space-lg);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: white;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  margin-bottom: var(--space-lg);
+}
+.keuangan-card-premium::before {
+  content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+  background: radial-gradient(circle at center, rgba(56, 189, 248, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.keuangan-summary { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-sm); margin-bottom: var(--space-lg); width: 100%; }
+.keuangan-summary-item { 
+  padding: var(--space-md); background: var(--color-surface); 
+  border-radius: var(--radius-md); border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm); transition: transform 0.2s ease;
+}
+.keuangan-summary-item:active { transform: scale(0.98); }
+.keuangan-summary-label { font-size: 10px; color: var(--color-text-muted); margin-bottom: 2px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+.keuangan-summary-value { font-size: 14px; font-weight: 700; letter-spacing: -0.3px; }
+
+.keuangan-chart-wrapper {
+  background: var(--color-surface); border-radius: var(--radius-lg); padding: var(--space-lg) var(--space-md);
+  border: 1px solid var(--color-border); margin-bottom: var(--space-lg); box-shadow: var(--shadow-sm);
+  width: 100%; box-sizing: border-box;
+}
+.keuangan-chart-bars {
+  display: flex; align-items: flex-end; justify-content: space-between; height: 120px; gap: 8px; padding-top: 15px;
+}
+.keuangan-chart-bar-container { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px; cursor: pointer; min-width: 0; }
+.keuangan-chart-bar {
+  width: 100%; max-width: 24px; background: var(--color-bg-secondary); border-radius: 4px 4px 0 0;
+  position: relative; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-origin: bottom; animation: growUp 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.keuangan-chart-bar.active { background: var(--color-primary); }
+.keuangan-chart-bar::after {
+  content: attr(data-value); position: absolute; top: -22px; left: 50%; transform: translateX(-50%) scale(0);
+  font-size: 9px; font-weight: 700; background: var(--color-primary-dark); color: white; padding: 2px 5px;
+  border-radius: 3px; transition: transform 0.2s ease; pointer-events: none; white-space: nowrap; z-index: 10;
+}
+.keuangan-chart-bar-container:active .keuangan-chart-bar::after { transform: translateX(-50%) scale(1); }
+.keuangan-chart-label { font-size: 10px; color: var(--color-text-muted); font-weight: 600; }
+
+.keuangan-target { 
+  background: var(--color-surface); border-radius: var(--radius-lg); padding: var(--space-md); 
+  margin-bottom: var(--space-lg); border: 1px solid var(--color-border); width: 100%; box-sizing: border-box;
+  box-shadow: var(--shadow-sm);
+}
+.keuangan-target-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-md); }
+
+/* ---------- Distribusi Page ---------- */
+.distribusi-stock-card { background: var(--color-surface); border-radius: var(--radius-lg); padding: var(--space-xl) var(--space-lg); margin-bottom: var(--space-lg); text-align: center; border: 1px solid var(--color-border); width: 100%; box-sizing: border-box; }
+.distribusi-stock-value { font-size: var(--font-size-3xl); font-weight: var(--font-weight-semibold); color: var(--color-text); letter-spacing: -1px; margin-top: var(--space-sm); word-wrap: break-word; }
+.distribusi-map { background: var(--color-surface); border-radius: var(--radius-lg); padding: var(--space-lg); margin-bottom: var(--space-lg); border: 1px solid var(--color-border); text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; box-sizing: border-box; }
+.distribusi-dest-grid { display: flex; gap: var(--space-sm); margin-top: var(--space-md); flex-wrap: wrap; justify-content: center; }
+.distribusi-dest-tag { padding: 6px 14px; border-radius: var(--radius-full); background: var(--color-bg-secondary); color: var(--color-text-secondary); font-size: 12px; font-weight: var(--font-weight-medium); border: 1px solid var(--color-border); }
+
+/* ---------- Edukasi Page ---------- */
+.edukasi-search { margin-bottom: var(--space-lg); position: relative; width: 100%; }
+.edukasi-search-icon { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: var(--color-text-muted); font-size: 20px; }
+.edukasi-search .form-input { padding-left: 48px; border-radius: var(--radius-sm); }
+.edukasi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-sm); width: 100%; }
+.edukasi-card { border-radius: var(--radius-md); overflow: hidden; background: var(--color-surface); border: 1px solid var(--color-border); cursor: pointer; transition: transform var(--transition-fast); }
+.edukasi-card:active { transform: scale(0.98); background: var(--color-bg-secondary); }
+.edukasi-card-thumb { width: 100%; height: 90px; display: flex; align-items: center; justify-content: center; font-size: 32px; background: var(--color-bg-secondary); color: var(--color-text-secondary); }
+.edukasi-card-body { padding: var(--space-md); }
+.edukasi-card-title { font-size: 13px; font-weight: var(--font-weight-medium); line-height: 1.4; color: var(--color-text); }
+.edukasi-card-tag { font-size: 10px; color: var(--color-text-muted); margin-top: 6px; font-weight: 500; text-transform: uppercase; }
+.edukasi-cert-section { margin-top: var(--space-xl); width: 100%; }
+.edukasi-cert-card { display: flex; align-items: center; gap: var(--space-md); padding: var(--space-md); background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); }
+.edukasi-cert-badge { width: 40px; height: 40px; border-radius: var(--radius-sm); background: var(--color-bg-secondary); color: var(--color-primary); display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+
+/* ---------- Profil Page ---------- */
+.profil-header { display: flex; flex-direction: column; align-items: center; padding: var(--space-lg) 0; margin-bottom: var(--space-md); width: 100%; }
+.profil-avatar { width: 80px; height: 80px; border-radius: var(--radius-full); background: var(--color-surface); border: 1px solid var(--color-border); color: var(--color-primary); display: flex; align-items: center; justify-content: center; font-size: 32px; margin-bottom: var(--space-md); box-shadow: var(--shadow-sm); }
+.profil-name { font-size: var(--font-size-xl); font-weight: var(--font-weight-semibold); letter-spacing: -0.5px; word-wrap: break-word; text-align: center; }
+.profil-id { font-size: 13px; color: var(--color-text-secondary); margin-top: 4px; font-weight: 400; }
+.profil-menu-group { margin-bottom: var(--space-lg); width: 100%; }
+.profil-menu-group-title { font-size: 11px; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: var(--space-sm); padding-left: var(--space-sm); font-weight: 600; }
+.profil-logout { margin-top: var(--space-xl); width: 100%; }

@@ -1,0 +1,20 @@
+{
+  "status": "Aktif",
+  "tanggalBergabung": "2024-03-15",
+  "simpananPokok": 500000,
+  "simpananWajib": 2400000,
+  "tabungan": 8750000,
+  "pinjaman": {
+    "total": 5000000,
+    "sisa": 2000000,
+    "cicilan": 500000,
+    "jatuhTempo": "2026-05-01"
+  },
+  "shu": 1250000,
+  "voting": {
+    "agenda": "Pembelian Cold Storage Baru",
+    "setuju": 72,
+    "tolak": 28,
+    "sudahVote": false
+  }
+}
